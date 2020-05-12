@@ -118,9 +118,6 @@ public class ConcesionarioControlador extends Controlador {
 		}
 	}
 
-	
-	
-	
 	public List<Concesionario> findAll () {
 		EntityManager em = getEntityManagerFactory().createEntityManager();
 		Query q = em.createQuery("SELECT c FROM Concesionario c", Concesionario.class);
