@@ -98,4 +98,20 @@ public class Coche extends Entidad implements Serializable {
 		return venta;
 	}
 
+	@Override
+	public String toString() {
+		return bastidor;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+
+		Coche f = (Coche) obj;
+		
+		if (this.id == f.getId()) {
+			return true;
+		}
+		return false;
+	}
+
 }

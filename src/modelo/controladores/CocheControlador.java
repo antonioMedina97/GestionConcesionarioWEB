@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
+import modelo.Cliente;
 import modelo.Coche;
 import modelo.Controlador;
 
@@ -149,6 +150,18 @@ public class CocheControlador extends Controlador {
 		em.close();
 		return resultado;
 	}
+	
+	
+	public List<Coche> findAllLimited (int limit, int offset) {
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		Query q = em.createQuery("SELECT c FROM Coche c", Coche.class);
+		q.setMaxResults(limit);
+		q.setFirstResult(offset);
+		List<Coche> resultado = (List<Coche>) q.getResultList();
+		em.close();
+		return resultado;
+	}
+
 	
 
 	

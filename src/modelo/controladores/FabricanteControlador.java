@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
+import modelo.Cliente;
 import modelo.Controlador;
 import modelo.Fabricante;
 
@@ -150,6 +151,16 @@ public class FabricanteControlador extends Controlador {
 		return resultado;
 	}
 	
+	public List<Fabricante> findAllLimited (int limit, int offset) {
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		Query q = em.createQuery("SELECT c FROM Fabricante c", Fabricante.class);
+		q.setMaxResults(limit);
+		q.setFirstResult(offset);
+		List<Fabricante> resultado = (List<Fabricante>) q.getResultList();
+		em.close();
+		return resultado;
+	}
+
 
 	
 	public static String toString (Fabricante fabricante) {

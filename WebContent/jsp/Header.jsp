@@ -34,13 +34,17 @@
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="navbar-nav">
 
-			<li class="nav-item active"><a class="nav-link" href="#">Concesionario
+			<li class="nav-item "><a class="nav-link" href="listadoConcesionarios.jsp?idPag=1">Concesionarios
 					<span class="sr-only"></span>
 			</a></li>
 
-			<li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+			<li class="nav-item"><a class="nav-link" href="listadoClientes.jsp?idPag=1">Clientes</a></li>
 
-			<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+			<li class="nav-item"><a class="nav-link" href="listadoFabricantes.jsp?idPag=1">Fabricantes</a></li>
+
+			<li class="nav-item"><a class="nav-link" href="listadoCoches.jsp?idPag=1">Coches</a></li>
+
+			<li class="nav-item"><a class="nav-link" href="listadoVentas.jsp?idPag=1">Ventas</a></li>
 
 
 		</ul>
