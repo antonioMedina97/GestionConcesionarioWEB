@@ -162,6 +162,13 @@ public class CocheControlador extends Controlador {
 		return resultado;
 	}
 
+	public int getCount() {
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		Query q = em.createNativeQuery("SELECT count(*) from coche ");
+		Long result = (Long) q.getSingleResult();
+		em.close();
+		return result.intValue();
+	}
 	
 
 	

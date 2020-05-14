@@ -81,39 +81,10 @@
 	<div class="row justify-content-center">
 		<div clas="col">
 
-			<ul class="pagination">
-		<li class="page-item "><a class="page-link" href="?idPag=1">Primero</a></li>
-		<li class="page-item "><a class="page-link" href="?idPag=<%=paginationIndex - 1%>">Anterior</a></li>
-
-
-
-		<%
-			List<Venta> c = VentaControlador.getControlador().findAll();
-		double size = Math.ceil(c.size() / 5);
-		if(paginationIndex > 2){
-		%>
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex - 2%>"><%=paginationIndex - 2%></a></li>
-		<%
-			}
-		%>
-		
-		<%
-		if(paginationIndex > 1){
-		%>
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex - 1%>"><%=paginationIndex - 1%></a></li>
-		<%
-			}
-		%>
-		
-		
-		<li class="page-item active"><a class="page-link" href="?idPag=<%=paginationIndex%>"><%=paginationIndex%></a></li>
-		
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex + 1%>"><%=paginationIndex + 1%></a></li>
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex + 2%>"><%=paginationIndex + 2%></a></li>
-		
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex + 1%>">Siguiente</a></li>
-		<li class="page-item"><a class="page-link" href="?idPag=<%= Math.round(size)%>">Fin</a></li>
-	</ul>	
+			<jsp:include page="Pagination.jsp" flush="true">
+				<jsp:param name="entity" value="Venta" />
+				<jsp:param name="idPag" value='<%=request.getParameter("idPag")%>' />
+			</jsp:include>
 		</div>
 	</div>
 	

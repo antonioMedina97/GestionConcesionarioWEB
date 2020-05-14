@@ -162,8 +162,14 @@ public class ClienteControlador extends Controlador {
 		em.close();
 		return resultado;
 	}
-
-
+	
+	public int getCount() {
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		Query q = em.createNativeQuery("SELECT count(*) from cliente ");
+		Long result = (Long) q.getSingleResult();
+		em.close();
+		return result.intValue();
+	}
 	
 	public static String toString (Cliente fabricante) {
 		return fabricante.getNombre() + " " + fabricante.getDniNie(); 

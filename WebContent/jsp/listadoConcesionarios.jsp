@@ -22,11 +22,9 @@
 	}%>
 
 <%!private int offset, paginationIndex; %>
-<%
-	paginationIndex = Integer.parseInt(request.getParameter("idPag")); 
-%>
 
-<%=offset = getOffset(request.getParameter("idPag"))%>
+
+<% offset = getOffset(request.getParameter("idPag"));%>
 
 <div class="container">
 	<h1>Listado de Concesionarios</h1>
@@ -69,34 +67,10 @@
 
 	<div class="row justify-content-center">
 		<div clas="col">
-			<ul class="pagination">
-		<li class="page-item "><a class="page-link" href="?idPag=<%=paginationIndex - 1%>">Anterior</a></li>
-		<%
-			List<Concesionario> c = ConcesionarioControlador.getControlador().findAll();
-		double size = Math.ceil(c.size() / 5);
-		if(paginationIndex > 2){
-		%>
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex - 2%>"><%=paginationIndex - 2%></a></li>
-		<%
-			}
-		%>
-		
-		<%
-		if(paginationIndex > 1){
-		%>
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex - 1%>"><%=paginationIndex - 1%></a></li>
-		<%
-			}
-		%>
-		
-		<li class="page-item active"><a class="page-link" href="?idPag=<%=paginationIndex%>"><%=paginationIndex%></a></li>
-		
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex + 1%>"><%=paginationIndex + 1%></a></li>
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex + 2%>"><%=paginationIndex + 2%></a></li>
-		
-		<li class="page-item"><a class="page-link" href="?idPag=<%=paginationIndex + 1%>">Siguiente</a></li>
-		
-	</ul>	
+			<jsp:include page="Pagination.jsp" flush="true">
+				<jsp:param name="entity" value="Concesionario" />
+				<jsp:param name="idPag" value='<%=request.getParameter("idPag")%>' />
+			</jsp:include>	
 		</div>
 	</div>
 	

@@ -177,7 +177,7 @@
 				        <div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label" for="fechaNac">Activo:</label> 
 							<div class="col-lg-2">
-								<input class="form-check-input form-control" type="checkbox" checked="<%=cliente.getActivo()%>" name="activo" id="activo">
+								<input class="form-check-input form-control" type="checkbox" <%= (cliente.getActivo()) ? "checked" : ""%> name="activo" id="activo">
 							</div> 
 						</div>
 						

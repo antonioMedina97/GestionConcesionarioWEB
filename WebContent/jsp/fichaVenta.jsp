@@ -145,7 +145,7 @@
 									List<Cliente> cli = ClienteControlador.getControlador().findAll();
 									for (Cliente c : cli) {
 									%>
-									<option value="<%=c.getId()%>" <%=((c.getId() == venta.getCliente().getId()) ? "selected=\"selected\"" : "")%>><%=c.getNombre()%></option>
+									<option value="<%=c.getId()%>" <%=((c.getId() == venta.getCliente().getId()) ? "selected" : "")%>><%=c.getNombre()%></option>
 									<% } %>
 								</select>
 							</div> 
@@ -161,7 +161,7 @@
 									List<Concesionario> concs = ConcesionarioControlador.getControlador().findAll();
 									for (Concesionario c : concs) {
 									%>
-									<option value="<%=c.getId()%>" <%=((c.getId() == venta.getConcesionario().getId()) ? "selected=\"selected\"" : "")%>><%=c.getNombre()%></option>
+									<option value="<%=c.getId()%>" <%=((c.getId() == venta.getConcesionario().getId()) ? "selected" : "")%>><%=c.getNombre()%></option>
 									<% } %>
 								</select>
 							</div> 
@@ -177,7 +177,7 @@
 									List<Coche> cos = CocheControlador.getControlador().findAll();
 									for (Coche c : cos) {
 									%>
-									<option value="<%=c.getId()%>" <%=((c.getId() == venta.getCoche().getId()) ? "selected=\"selected\"" : "")%>><%=c.getBastidor()%></option>
+									<option value="<%=c.getId()%>" <%=((c.getId() == venta.getCoche().getId()) ? "selected" : "")%>><%=c.getBastidor()%></option>
 									<% } %>
 								</select>
 							</div> 

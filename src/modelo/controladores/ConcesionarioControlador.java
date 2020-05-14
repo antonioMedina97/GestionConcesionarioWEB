@@ -135,6 +135,14 @@ public class ConcesionarioControlador extends Controlador {
 		em.close();
 		return resultado;
 	}
+	
+	public int getCount() {
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		Query q = em.createNativeQuery("SELECT count(*) from concesionario ");
+		Long result = (Long) q.getSingleResult();
+		em.close();
+		return result.intValue();
+	}
 
 	
 	

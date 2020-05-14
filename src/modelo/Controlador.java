@@ -192,4 +192,12 @@ public class Controlador {
 		}
 	}
 	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getCount() {
+		return -1;
+	}
 }
