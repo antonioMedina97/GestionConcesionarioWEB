@@ -51,9 +51,9 @@
 			<tr>
 
 				<td><a
-					href="fichaConcesionario.jsp?idConcesionario=<%=c.getId()%>"> <%=c.getNombre()%>
+					href="fichaConcesionario.jsp?idConcesionario=<%=c.getId()%>"><%=c.getCif()%>  
 				</a></td>
-				<td><%=c.getCif()%></td>
+				<td><%=c.getNombre()%></td>
 				<td><%=c.getLocalidad()%></td>
 
 			</tr>
